@@ -7,7 +7,7 @@ module test_lib
       import :: c_int
       integer(c_int), value :: mpi_rank
       integer(c_int), value :: device_count
-    end subroutine test_lib
+    end subroutine test
   end interface
 
 end module test_lib
