@@ -1,4 +1,6 @@
-cmake_minimum_required(VERSION 3.10)
+# CMake version 3.21 or higher is required to use CMake HIP language support.
+cmake_minimum_required(VERSION 3.21)
+
 project(test_lib LANGUAGES CXX HIP)
 
 find_package(HIP REQUIRED)
