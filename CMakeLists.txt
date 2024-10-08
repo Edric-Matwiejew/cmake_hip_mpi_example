@@ -47,10 +47,10 @@ message(STATUS "CMAKE_HIP_FLAGS: ${CMAKE_HIP_FLAGS}")
 add_subdirectory(src/cpp)
 
 if(BUILD_FORTRAN)
-    message(STATUS "Build Fortran...yes.")
+    message(STATUS "Build Fortran - yes")
     add_subdirectory(src/f90)
 else()
-    message(STATUS "Build Fortran...no.")
+    message(STATUS "Build Fortran - no")
 endif()
 
 # C++ 11 is required to compile for GPU devices with hipcc.
