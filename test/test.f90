@@ -1,5 +1,7 @@
 program call_test_lib
   use mpi
+  use hipfort
+  use hipfort_check
   use test_lib
   implicit none
 
@@ -10,9 +12,7 @@ program call_test_lib
   call MPI_Comm_rank(MPI_COMM_WORLD, mpi_rank, ierr)
   call MPI_Comm_size(MPI_COMM_WORLD, mpi_size, ierr)
 
-  ! Need to use hipFORT for hipGetDeviceCount, for now just setting
-  ! the device count to one.
-  device_count = 1
+  call hipCheck(hipGetDeviceCount(device_count))
 
   call test(mpi_rank, device_count)
 
