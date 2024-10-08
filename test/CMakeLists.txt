@@ -20,7 +20,7 @@ add_executable(hip_mpi_program_cpp test.cpp)
 target_link_libraries(hip_mpi_program_cpp PRIVATE test_lib hip::host MPI::MPI_CXX)
 install(TARGETS hip_mpi_program_cpp RUNTIME DESTINATION bin)
 
-if(ENABLE_FORTRAN)
+if(BUILD_FORTRAN)
     message(STATUS "Build Fortran...yes.")
     add_executable(hip_mpi_program_f90 test.f90)
     target_link_libraries(hip_mpi_program_f90 PRIVATE test_lib_f90 test_lib hip::host MPI::MPI_Fortran)

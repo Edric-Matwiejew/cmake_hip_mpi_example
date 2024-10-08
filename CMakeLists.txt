@@ -11,8 +11,8 @@ if(NOT DEFINED CMAKE_HIP_FLAGS)
 endif()
 
 # By default, don't build the Fortran interface library.
-if(NOT DEFINED ENABLE_FORTRAN)
-    set(ENABLE_FORTRAN 0)
+if(NOT DEFINED BUILD_FORTRAN)
+    set(BUILD_FORTRAN 0)
 endif()
 
 # Add -fPIC to CMAKE_HIP_FLAGS if it is not present.
@@ -44,7 +44,7 @@ message(STATUS "CMAKE_HIP_FLAGS: ${CMAKE_HIP_FLAGS}")
 
 add_subdirectory(src/cpp)
 
-if(ENABLE_FORTRAN)
+if(BUILD_FORTRAN)
     message(STATUS "Build Fortran...yes.")
     add_subdirectory(src/f90)
 else()
