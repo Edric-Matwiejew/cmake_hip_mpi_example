@@ -1,6 +1,7 @@
 This is an example project that demonstrates the building of a C++ library and Fortran interface library that utilises HIP, HIP libraries and MPI.
 
-The `build.sh` script builds the library, installs it to the project root and builds tests. The test binaries are installed to `bin` in the project root.
+The library `test_lib` contains a single function `test` that depends on MPI, HIP, and hipFFT. 
 
-The library `test_lib` contains a single function `test` that is dependent on MPI, HIP, and hipFFT. 
+To set up the environment and `LD_LIBRARY_PATH` source `env.sh`.
 
+To build the library and tests, run `build_script.sh`. The library and tests will be installed in the project root. 
