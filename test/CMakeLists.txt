@@ -21,9 +21,10 @@ target_link_libraries(hip_mpi_program_cpp PRIVATE test_lib hip::host MPI::MPI_CX
 install(TARGETS hip_mpi_program_cpp RUNTIME DESTINATION bin)
 
 if(BUILD_FORTRAN)
+    find_package(hipfort REQUIRED)
     message(STATUS "Build Fortran - yes")
     add_executable(hip_mpi_program_f90 test.f90)
-    target_link_libraries(hip_mpi_program_f90 PRIVATE test_lib_f90 test_lib hip::host MPI::MPI_Fortran)
+    target_link_libraries(hip_mpi_program_f90 PRIVATE test_lib_f90 test_lib hip::host MPI::MPI_Fortran hipfort::hipfort-amdgcn)
     install(TARGETS hip_mpi_program_f90 RUNTIME DESTINATION bin)
 else()
     message(STATUS "Build Fortran - no")
