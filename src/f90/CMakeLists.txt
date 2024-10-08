@@ -1,5 +1,5 @@
 # Enable Fortran, doing it here as the Fortran component is optional.
-enable_language(Fortran REQUIRED)
+enable_language(Fortran)
 
 # Set is output path for Fortran *.mod files.
 set(CMAKE_Fortran_MODULE_DIRECTORY ${CMAKE_BINARY_DIR}/include)
